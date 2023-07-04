@@ -15,8 +15,8 @@
 }
 
 * {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -57,7 +57,7 @@ footer {
   width: 100%;
   border-top: var(--primary-border);
   position: absolute;
-  bottom: 0px;
+  bottom: 0;
 }
 
 footer .footer-container {
@@ -70,7 +70,7 @@ footer .footer-container {
 
 footer .footer-container img {
   width: 50px;
-  margin: 10px 0px;
+  margin: 10px 0;
 }
 
 .footer-container ul {
