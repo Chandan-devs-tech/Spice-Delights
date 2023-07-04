@@ -1,4 +1,18 @@
-h1 {
-  color: blue;
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+:root {
+  --primary-color: #047aed;
+  --white-color: #ffff;
+  --black-800: rgb(21, 21, 22);
+  --light-200: rgba(21, 21, 22, 0.553);
+  --red-500: rgb(216, 51, 51);
+  --text-font: 17px;
+  --h1-font: 27px;
+  --md-radius: 5px;
+  --large-radius: 10px;
+  --primary-border: 1px solid var(--light-dark);
+}
+
+body {
+  font-family: 'Lato', sans-serif;
 }
