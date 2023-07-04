@@ -4,15 +4,117 @@
   --primary-color: #047aed;
   --white-color: #ffff;
   --black-800: rgb(21, 21, 22);
-  --light-200: rgba(21, 21, 22, 0.553);
+  --black-500: rgba(0, 0, 0, 0.682);
+  --black-200: rgba(46, 46, 48, 0.249);
   --red-500: rgb(216, 51, 51);
   --text-font: 17px;
   --h1-font: 27px;
   --md-radius: 5px;
   --large-radius: 10px;
-  --primary-border: 1px solid var(--light-dark);
+  --primary-border: 1px solid var(--black-200);
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
 }
 
 body {
   font-family: 'Lato', sans-serif;
+  overflow-x: hidden;
+}
+
+header {
+  width: 100%;
+  background-image: url("./assets/Spices\ &\ Flavors.png");
+  background-repeat: no-repeat;
+  background-size: 90px 90px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 20px 0 20px;
+  width: 100%;
+  align-items: center;
+  border: 1px solid #000;
+  height: 70px;
+}
+
+.navList {
+  display: flex;
+  width: 40%;
+  justify-content: space-evenly;
+  list-style-type: none;
+}
+
+h1 {
+  color: blue;
+  text-align: center;
+}
+
+footer {
+  width: 100%;
+  border-top: var(--primary-border);
+  position: absolute;
+  bottom: 0px;
+}
+
+footer .footer-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+footer .footer-container img {
+  width: 50px;
+  margin: 10px 0px;
+}
+
+.footer-container ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  color: var(--black-500);
+}
+
+.footer-container ul li {
+  transition: 300ms;
+  cursor: pointer;
+}
+
+.footer-container ul li:hover {
+  color: var(--black-800);
+}
+
+.footer-container ul :nth-child(1) {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  border-right: 1px solid var(--black-200);
+}
+
+.footer-container ul :nth-child(2) {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  border-right: 1px solid var(--black-200);
+}
+
+.footer-container ul :nth-child(3) {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+}
+
+footer .footer-copyright {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--black-200);
+  margin-top: 10px;
 }
