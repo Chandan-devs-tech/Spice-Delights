@@ -1,3 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header {
+  width: 100%;
+  background-image: url("./assets/Spices\ &\ Flavors.png");
+  background-repeat: no-repeat;
+  background-size: 90px 90px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 20px 0 20px;
+  width: 100%;
+  align-items: center;
+  border: 1px solid #000;
+  height: 70px;
+}
+
+.navList {
+  display: flex;
+  width: 40%;
+  justify-content: space-evenly;
+  list-style-type: none;
+}
+
 h1 {
   color: blue;
   text-align: center;
