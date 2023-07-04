@@ -1,4 +1,6 @@
 import './style.css';
+import './assets/Spices & Flavors.png';
+import './assets/cooking.png';
 
 /* eslint-disable */
 const baseUrl = 'https://www.themealdb.com/api/json/v1/1/filter.php?a=Indian';
