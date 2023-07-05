@@ -3,6 +3,9 @@ import { baseUrl } from './module/apiData.js';
 
 let arrayOfMeals = [];
 const mainContainer = document.querySelector('.main-container');
+const infoPopup = document.querySelector('.info-popup-container');
+const backdrop = document.querySelector('.backdrop');
+const closeBtn = document.querySelector('.close-btn');
 const getData = async () => {
   const result = await fetch(baseUrl);
   const { meals } = await result.json();
@@ -10,6 +13,52 @@ const getData = async () => {
 };
 
 getData();
+
+const showMealDetailInformation = async (item, view) => {
+  const imageDesk = document.querySelector('.img-desc img');
+  const infoMealTitle = document.querySelector('.product-desc-title');
+  const areaInfo = document.querySelector('.recep-area-info');
+  const ingredients = document.querySelector('.recep-ingredient-info');
+  const category = document.querySelector('.info-category');
+  const mesure = document.querySelector('.info-mesure');
+
+  switch (view) {
+    case 'show': {
+      const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${item.idMeal}`;
+      const fetchData = await fetch(url);
+      const { meals } = await fetchData.json();
+      imageDesk.src = item.strMealThumb;
+      infoMealTitle.textContent = item.strMeal;
+      areaInfo.textContent = meals[0].strArea;
+
+      ingredients.textContent = meals[0].strIngredient1;
+      category.textContent = meals[0].strCategory;
+      mesure.textContent = meals[0].strMeasure2;
+      break;
+    }
+    case 'close': {
+      imageDesk.src = '';
+      infoMealTitle.textContent = '..loading';
+      areaInfo.textContent = '..loading';
+
+      ingredients.textContent = '';
+      category.textContent = '..loading';
+      mesure.textContent = '..loading';
+      infoPopup.classList.remove('open');
+      backdrop.classList.remove('open');
+      break;
+    }
+    default: {
+      break;
+    }
+  }
+};
+
+const showMealDetail = async (item) => {
+  infoPopup.classList.add('open');
+  backdrop.classList.add('open');
+  await showMealDetailInformation(item, 'show');
+};
 
 const showMeals = async () => {
   arrayOfMeals = await getData();
@@ -55,6 +104,7 @@ const showMeals = async () => {
     const commentBtn = document.createElement('button');
     commentBtn.className = 'comment-btn';
     commentBtn.textContent = 'Comment';
+    commentBtn.addEventListener('click', () => showMealDetail(item));
 
     // Create the reservation button
     const reservationBtn = document.createElement('button');
@@ -80,3 +130,5 @@ const showMeals = async () => {
 document.addEventListener('DOMContentLoaded', async () => {
   await showMeals();
 });
+
+closeBtn.addEventListener('click', () => showMealDetailInformation({}, 'close'));
