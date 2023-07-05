@@ -46,25 +46,23 @@
 
 
             <div class="comment-form">
-                <form action="">
+                <form action="" class="comment-form">
                     <div class="input-controller">
-                        <input type="Name" placeholder="Name">
+                        <input type="Name" placeholder="Name" class="comment-user_name">
                     </div>
                     <div class="input-controller">
-                        <textarea placeholder="Your comment" name="" id="" cols="30" rows="10"></textarea>
+                        <textarea class="comment-content" placeholder="Your comment" name="" id="" cols="30"
+                            rows="10"></textarea>
                     </div>
-                    <button>Post comment 💬</button>
+                    <button class="comment-submit-button">Post comment 💬</button>
                 </form>
             </div>
 
             <div class="comments">
-                <h3>Comments <strong>(32)</strong> </h3>
+                <h3>Comments <strong class="">( <span class="comment-length"></span> )</strong> </h3>
                 <ul class="comments-list">
 
-                    <li>
-                        <h4>D</h4>
-                        <p>some comments</p>
-                    </li>
+                    <h4>loading</h4>
                 </ul>
             </div>
         </div>
