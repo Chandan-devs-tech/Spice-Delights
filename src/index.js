@@ -14,6 +14,7 @@ const getData = async () => {
 
 getData();
 
+
 const showMealDetailInformation = async (item, view) => {
   const imageDesk = document.querySelector('.img-desc img');
   const infoMealTitle = document.querySelector('.product-desc-title');
