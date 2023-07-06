@@ -1,4 +1,5 @@
 import './style.css';
+import './assets/Spices & Flavors.png';
 import fetchLikes from './module/getLike.js';
 import getData from './module/getBaseData.js';
 import { involvementCommentUrl } from './module/apiData.js';
