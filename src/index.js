@@ -40,7 +40,6 @@ const showMeals = async () => {
       // Create the div for number of likes
       const numOfLikesDiv = document.createElement('div');
       numOfLikesDiv.className = 'num-of-likes';
-      // numOfLikesDiv.textContent = '0 Likes';
 
       // Create the div for button container
       const btnContainerDiv = document.createElement('div');
@@ -50,9 +49,6 @@ const showMeals = async () => {
       const commentBtn = document.createElement('button');
       commentBtn.className = 'comment-btn';
       commentBtn.textContent = 'Comment';
-      // commentBtn.addEventListener('click', () => {
-      //   popupWindow(item.idMeal);
-      // });
 
       // Create the reservation button
       const reservationBtn = document.createElement('button');
