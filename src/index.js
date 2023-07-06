@@ -1,4 +1,5 @@
 import './style.css';
+import './assets/Spices & Flavors.png';
 import fetchLikes from './module/getLike.js';
 import getData from './module/getBaseData.js';
 import { involvementCommentUrl } from './module/apiData.js';
@@ -33,6 +34,7 @@ const printFetchedComments = async () => {
   try {
     const request = await fetchComments(involvementCommentUrl, selectedId);
     arrayOfComments = [...request];
+    console.log(arrayOfComments);
     printComment(arrayOfComments);
   } catch (error) {
     console.log(error.message, 'error');
@@ -179,36 +181,33 @@ const postCommentInfo = async (e) => {
     commentNameInput.value.trim().split('').length < 1
     || commentContent.value.trim().split('').length < 1
   ) {
-    alert('get serious');
+    return alert('get serious');
   }
 
   // post comment to server
   const findIndexOfSelectedData = arrayOfMeals.findIndex(
     (e) => e.idMeal === selectedId,
   );
-  try {
-    formSubmitButton.textContent = '...loading';
-    formSubmitButton.disabled = true;
-    await postComment(`${involvementCommentUrl}`, {
-      idMeal: arrayOfMeals[findIndexOfSelectedData].idMeal,
-      username: commentNameInput.value,
-      comment: commentContent.value,
-    });
 
-    arrayOfComments.unshift({
-      username: commentNameInput.value,
-      comment: commentContent.value,
-    });
-
-    printComment(arrayOfComments);
+  formSubmitButton.textContent = '...loading';
+  formSubmitButton.disabled = true;
+  await postComment(`${involvementCommentUrl}`, {
+    idMeal: arrayOfMeals[findIndexOfSelectedData].idMeal,
+    username: commentNameInput.value,
+    comment: commentContent.value,
+  }).then(async () => {
     formSubmitButton.textContent = 'Post comment 💬';
     formSubmitButton.disabled = false;
     commentNameInput.value = '';
     commentContent.value = '';
-  } catch (error) {
-    console.log(error);
-    alert('failed to post your request !');
-  }
+    setTimeout(() => {
+      printFetchedComments();
+    }, 1000);
+  }).catch(() => {
+    alert('failed to send your request');
+  });
+
+  return '_-';
 };
 
 document.addEventListener('DOMContentLoaded', async () => {
