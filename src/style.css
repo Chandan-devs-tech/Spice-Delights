@@ -223,7 +223,7 @@ header {
   justify-content: center;
 }
 
-.ingredients-container> :nth-child(1) {
+.ingredients-container > :nth-child(1) {
   border-right: var(--primary-border);
   list-style: none;
   display: flex;
@@ -232,7 +232,7 @@ header {
   padding-right: 10px;
 }
 
-.ingredients-container> :nth-child(2) {
+.ingredients-container > :nth-child(2) {
   list-style: none;
   display: flex;
   flex-direction: column;

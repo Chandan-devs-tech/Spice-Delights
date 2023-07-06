@@ -47,7 +47,6 @@ export const printComment = (comments) => {
   const commentsLength = document.querySelector('.comment-length');
   commentsLength.textContent = comments.length;
 
-
   getCommentContainer.innerHTML = '';
   comments.forEach((comment) => {
     getCommentContainer.appendChild(Comment(comment));

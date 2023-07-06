@@ -195,7 +195,7 @@ const postCommentInfo = async (e) => {
     idMeal: arrayOfMeals[findIndexOfSelectedData].idMeal,
     username: commentNameInput.value,
     comment: commentContent.value,
-  }).then(async (res) => {
+  }).then(async () => {
     formSubmitButton.textContent = 'Post comment 💬';
     formSubmitButton.disabled = false;
     commentNameInput.value = '';
@@ -203,13 +203,11 @@ const postCommentInfo = async (e) => {
     setTimeout(() => {
       printFetchedComments();
     }, 1000);
-  }).catch(err => {
-    console.log(err);
-    alert("failed to send your request");
-  })
+  }).catch(() => {
+    alert('failed to send your request');
+  });
 
-
-
+  return '_-';
 };
 
 document.addEventListener('DOMContentLoaded', async () => {
