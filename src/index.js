@@ -1,8 +1,8 @@
 import './style.css';
 import fetchLikes from './module/getLike.js';
 import getData from './module/getBaseData.js';
-import { baseUrl, involvementCommentUrl } from './module/apiData.js';
-import { postComment, printComment, fetchComments } from './module/comments';
+import { involvementCommentUrl } from './module/apiData.js';
+import { postComment, printComment, fetchComments } from './module/comments.js';
 
 let arrayOfMeals = [];
 let arrayOfComments = [];
@@ -17,13 +17,13 @@ const formSubmitButton = document.querySelector('.comment-submit-button');
 const commentsList = document.querySelector('.comments-list');
 const commentLength = document.querySelector('.comment-length');
 
-const getData = async () => {
-  const result = await fetch(baseUrl);
-  const { meals } = await result.json();
-  return meals;
-};
+// const getData = async () => {
+//   const result = await fetch(baseUrl);
+//   const { meals } = await result.json();
+//   return meals;
+// };
 
-getData();
+// getData();
 
 const printFetchedComments = async () => {
   arrayOfComments = [];
@@ -129,11 +129,11 @@ const showMeals = async () => {
       const btnContainerDiv = document.createElement('div');
       btnContainerDiv.className = 'btn-container';
 
-    // Create the comment button
-    const commentBtn = document.createElement('button');
-    commentBtn.className = 'comment-btn';
-    commentBtn.textContent = 'Comment';
-    commentBtn.addEventListener('click', () => showMealDetail(item));
+      // Create the comment button
+      const commentBtn = document.createElement('button');
+      commentBtn.className = 'comment-btn';
+      commentBtn.textContent = 'Comment';
+      commentBtn.addEventListener('click', () => showMealDetail(item));
 
       // Create the reservation button
       const reservationBtn = document.createElement('button');
@@ -175,12 +175,17 @@ const postCommentInfo = async (e) => {
   const commentNameInput = document.querySelector('.comment-user_name');
   const commentContent = document.querySelector('.comment-content');
 
-  if (commentNameInput.value.trim().split('').length < 1 || commentContent.value.trim().split('').length < 1) {
+  if (
+    commentNameInput.value.trim().split('').length < 1
+    || commentContent.value.trim().split('').length < 1
+  ) {
     alert('get serious');
   }
 
   // post comment to server
-  const findIndexOfSelectedData = arrayOfMeals.findIndex((e) => e.idMeal === selectedId);
+  const findIndexOfSelectedData = arrayOfMeals.findIndex(
+    (e) => e.idMeal === selectedId,
+  );
   try {
     formSubmitButton.textContent = '...loading';
     formSubmitButton.disabled = true;
@@ -190,12 +195,10 @@ const postCommentInfo = async (e) => {
       comment: commentContent.value,
     });
 
-    arrayOfComments.unshift(
-      {
-        username: commentNameInput.value,
-        comment: commentContent.value,
-      },
-    );
+    arrayOfComments.unshift({
+      username: commentNameInput.value,
+      comment: commentContent.value,
+    });
 
     printComment(arrayOfComments);
     formSubmitButton.textContent = 'Post comment 💬';
