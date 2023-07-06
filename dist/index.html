@@ -1,39 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Spice Delights</title>
-    <!-- <script src="index.js" type="module" defer></script> -->
-    <script
-      src="https://kit.fontawesome.com/366c518b05.js"
-      crossorigin="anonymous"
-    ></script>
-  <script defer src="main.js"></script></head>
-  <body>
+    <script src="index.js" type="module" defer></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<script defer src="main.js"></script></head>
+
+<body>
     <header>
-      <div class="navbar">
-        <div class="header-logo"></div>
-        <ul class="navList">
-          <li>Meals</li>
-          <li>About</li>
-          <li>Contact</li>
-        </ul>
-      </div>
+        <div class="navbar">
+            <div class="header-logo"></div>
+            <ul class="navList">
+                <li>Meals</li>
+                <li>About</li>
+                <li>Contact</li>
+            </ul>
+        </div>
     </header>
-    <section class="main-container"></section>
+    <div class="backdrop"></div>
+    <div class="info-popup-container">
+        <div class="info-popup">
+            <button class="close-btn">
+                <i class='bx bx-x close-btn'></i>
+            </button>
+
+
+            <div class="img-desc">
+                <img alt="">
+            </div>
+            <h2 class="product-desc-title"></h2>
+            <div class="ingredients-container">
+                <ul>
+                    <li>Area : <strong class="recep-area-info">...loading</strong> </li>
+                    <li>ingredients : <strong class="recep-ingredient-info"></strong></strong> </li>
+                </ul>
+
+                <ul>
+                    <li>Measure : <strong class="info-mesure">..loading</strong> </li>
+                    <li>Category : <strong class="info-category">...loading</strong> </li>
+                </ul>
+            </div>
+
+
+            <div class="comment-form">
+                <form action="">
+                    <div class="input-controller">
+                        <input type="Name" placeholder="Name">
+                    </div>
+                    <div class="input-controller">
+                        <textarea placeholder="Your comment" name="" id="" cols="30" rows="10"></textarea>
+                    </div>
+                    <button>Post comment 💬</button>
+                </form>
+            </div>
+
+            <div class="comments">
+                <h3>Comments <strong>(32)</strong> </h3>
+                <ul class="comments-list">
+
+                    <li>
+                        <h4>D</h4>
+                        <p>some comments</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <section class="main-container">
+    </section>
     <footer class="">
-      <div class="footer-container">
-        <div class="footer-logo"></div>
-        <ul>
-          <li>about us</li>
-          <li>meals</li>
-          <li>contact</li>
-        </ul>
-      </div>
-      <div class="footer-copyright">
-        <p>&copy; Spice Delights</p>
-      </div>
+        <div class="footer-container">
+            <div class="footer-logo"></div>
+            <ul>
+                <li>about us</li>
+                <li>meals</li>
+                <li>contact</li>
+            </ul>
+        </div>
+        <div class="footer-copyright">
+            <p>&copy; Spice Delights</p>
+        </div>
     </footer>
   </body>
 </html>
