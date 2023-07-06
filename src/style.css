@@ -271,6 +271,15 @@ header {
   color: white;
 }
 
+.comment-name {
+  display: flex;
+  align-items: center;
+}
+
+.comment-name span {
+  font-size: 14px;
+}
+
 .comments-list li p {
   color: var(--black-500);
   margin: 0 10px;
@@ -323,6 +332,10 @@ header {
   padding: 20px 0;
   font-family: "Lato", sans-serif;
   cursor: pointer;
+}
+
+.comment-form button:disabled {
+  background-color: gray;
 }
 
 .close-btn {
