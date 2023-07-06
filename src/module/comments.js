@@ -1,4 +1,4 @@
-import Comment from '../components/comment.js';
+import Comment from './comment.js';
 
 export const fetchComments = async (url, id) => {
   let response;
@@ -8,6 +8,7 @@ export const fetchComments = async (url, id) => {
       'Content-type': 'application/json',
     },
   }).then(async (data) => {
+    console.log(data);
     response = await data.json();
     return response;
   })
@@ -46,7 +47,6 @@ export const printComment = (comments) => {
   const commentsLength = document.querySelector('.comment-length');
   commentsLength.textContent = comments.length;
 
-  console.log(comments);
 
   getCommentContainer.innerHTML = '';
   comments.forEach((comment) => {

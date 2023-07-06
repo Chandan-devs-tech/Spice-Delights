@@ -285,6 +285,12 @@ header {
   margin: 0 10px;
 }
 
+.comment-date
+{
+  font-size: 14px;
+  padding-top: 20px;
+}
+
 .comment-form {
   max-width: 400px;
   width: 100%;
@@ -329,6 +335,7 @@ header {
   border: none;
   color: white;
   margin-top: 20px;
+  margin-bottom: 30px;
   padding: 20px 0;
   font-family: "Lato", sans-serif;
   cursor: pointer;
