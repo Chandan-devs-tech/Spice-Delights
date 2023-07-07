@@ -84,7 +84,7 @@ Clone this repository to your desired folder:
 Install this project with:
 
 ```sh
-  cd Flavor-Quest
+  cd Spice-Delights
   npm install
 ```
 ### Usage
