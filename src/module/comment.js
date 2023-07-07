@@ -11,6 +11,7 @@ const comment = (props) => {
     <p>${props.comment}</p>
     <p class="comment-date">Date :${props.creation_date}</p>
     `;
+
   return el;
 };
 
