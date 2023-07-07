@@ -54,7 +54,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Link of Spice Delights]()
+- [Live Link of Spice Delights](https://chandan-devs-tech.github.io/Spice-Delights/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
