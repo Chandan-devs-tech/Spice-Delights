@@ -30,6 +30,8 @@ describe('displayComment', () => {
     expect(screen.getByTestId('comments-list').children.length).toBe(addComment.length);
   });
 
+  
+
   test('should display correct comment counter', () => {
     const username = 'a simple name';
     const usercomment = 'comment from user';

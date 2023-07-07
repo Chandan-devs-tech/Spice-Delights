@@ -8,14 +8,12 @@ export const fetchComments = async (url, id) => {
       'Content-type': 'application/json',
     },
   }).then(async (data) => {
-    console.log(data);
     response = await data.json();
     return response;
   })
     .then((result) => {
       response = result;
     }).catch((error) => {
-      console.log(error);
       throw error;
     });
 
@@ -36,7 +34,6 @@ export const postComment = async (url, content) => {
       'Content-type': 'application/json',
     },
   }).then(() => {
-    console.log('...this request does not provide a response');
   }).catch((error) => {
     throw error;
   });

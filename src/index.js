@@ -36,10 +36,9 @@ const printFetchedComments = async () => {
   try {
     const request = await fetchComments(involvementCommentUrl, selectedId);
     arrayOfComments = [...request];
-    console.log(arrayOfComments);
     printComment(arrayOfComments);
   } catch (error) {
-    console.log(error.message, 'error');
+
   }
 };
 
@@ -179,7 +178,6 @@ const showMeals = async () => {
       mainContainer.appendChild(div);
     });
   } catch (error) {
-    console.error('ERROR', error);
   }
 };
 
