@@ -5,6 +5,7 @@ import getData from './module/getBaseData.js';
 import sendLike from './module/sendLike.js';
 import { involvementCommentUrl } from './module/apiData.js';
 import { postComment, printComment, fetchComments } from './module/comments.js';
+import { mealcounter, showCount } from './module/mealCounter.js';
 
 let arrayOfMeals = [];
 let arrayOfComments = [];
@@ -206,23 +207,27 @@ const postCommentInfo = async (e) => {
     idMeal: arrayOfMeals[findIndexOfSelectedData].idMeal,
     username: commentNameInput.value,
     comment: commentContent.value,
-  }).then(async () => {
-    formSubmitButton.textContent = 'Post comment 💬';
-    formSubmitButton.disabled = false;
-    commentNameInput.value = '';
-    commentContent.value = '';
-    setTimeout(() => {
-      printFetchedComments();
-    }, 1000);
-  }).catch(() => {
-    alert('failed to send your request');
-  });
+  })
+    .then(async () => {
+      formSubmitButton.textContent = 'Post comment 💬';
+      formSubmitButton.disabled = false;
+      commentNameInput.value = '';
+      commentContent.value = '';
+      setTimeout(() => {
+        printFetchedComments();
+      }, 1000);
+    })
+    .catch(() => {
+      alert('failed to send your request');
+    });
 
   return '_-';
 };
 
 document.addEventListener('DOMContentLoaded', async () => {
+  const num = await mealcounter();
   await showMeals();
+  showCount(num);
 });
 
 closeBtn.addEventListener('click', () => showMealDetailInformation({}, 'close'));
