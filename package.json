@@ -1,5 +1,5 @@
 {
-  "name": "flavor-quest",
+  "name": "Spice-Delights",
   "version": "1.0.0",
   "description": "<a name=\"readme-top\"></a>",
   "main": "index.js",
@@ -12,15 +12,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://Chandan-devs-tech.github.io/Spice-Delights"
+    "url": "git+https://github.com/Chandan-devs-tech/Spice-Delights.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Chandan-devs-tech/Flavor-Quest/issues"
+    "url": "https://github.com/Chandan-devs-tech/Spice-Delights/issues"
   },
-  "homepage": "https://github.com/Chandan-devs-tech/Flavor-Quest#readme",
+  "homepage": "https://Chandan-devs-tech.github.io/Spice-Delights",
   "devDependencies": {
     "@babel/cli": "^7.22.6",
     "@babel/core": "^7.22.8",
