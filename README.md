@@ -56,6 +56,8 @@
 
 - [Live Link of Spice Delights](https://chandan-devs-tech.github.io/Spice-Delights/)
 
+- [Live Presentation](https://drive.google.com/file/d/1fifFH89ooddL5-gJWBA_k9Bxk0ur9mY9/view?usp=sharing)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
