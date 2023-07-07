@@ -2,6 +2,7 @@ import './style.css';
 import './assets/Spices & Flavors.png';
 import fetchLikes from './module/getLike.js';
 import getData from './module/getBaseData.js';
+import sendLike from './module/sendLike.js';
 import { involvementCommentUrl } from './module/apiData.js';
 import { postComment, printComment, fetchComments } from './module/comments.js';
 
@@ -162,6 +163,16 @@ const showMeals = async () => {
       });
 
       countOfLikes.textContent = `${likeOfMeal} likes`;
+
+      // Heart Icon event listener
+      const heartBtn = div.querySelector('.fa-heart');
+      heartBtn.addEventListener('click', () => {
+        sendLike(id, numOfLikesDiv);
+      });
+      heartBtn.addEventListener('mouseup', () => {
+        heartIcon.classList.add('fa-solid');
+        heartIcon.classList.remove('fa-regular');
+      });
 
       // Now you can use the main div in your DOM
       mainContainer.appendChild(div);

@@ -1,5 +1,5 @@
-// import addComment from '../mock/comments.js';
-import { screen } from '@testing-library/dom';
+/* eslint-disable */
+import { screen } from '@testing-library/dom.js';
 import addCommentMock from '../mock/comments.js';
 
 document.body.innerHTML = `
